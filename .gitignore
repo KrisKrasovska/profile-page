@@ -1,0 +1,29 @@
+# Логи
+logs
+*.log
+npm-debug.log*
+
+# Папка для зависимостей
+node_modules/
+/node_modules
+
+# Папка для сборки
+dist/
+
+# Конфигурационные файлы операционной системы
+.DS_Store
+Thumbs.db
+
+# Конфигурационные файлы редакторов/IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Папка для временных файлов
+tmp/
+temp/
+
+# Командные файлы
+*.sh
+*.bat
