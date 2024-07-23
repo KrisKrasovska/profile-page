@@ -1,11 +1,86 @@
+.header {
+  padding: 16px 0;
+  border-bottom: 1px solid #e4e4e4;
+  width: 100%;
+}
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.logo {
+  width: 91px;
+  height: 32px;
+}
+.nav__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: auto;
+}
 .header__link {
-	color: $accent-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $accent-color;
+  transition: $transition;
+}
+.header__link:hover,
+.header__link:focus {
+  color: $primary-text-color;
+}
+.header__link:first-of-type {
+  @media screen and (min-width: 768px) {
+    margin-right: 32px;
+  }
 }
 
 .header__link svg {
-	display: block;
-	width: 32px;
-	height: 32px;
-	fill: currentColor;
-	stroke: currentColor;
+  display: block;
+  width: 32px;
+  height: 32px;
+  fill: none;
+  stroke: currentColor;
+}
+.header__link .user {
+  fill: currentColor;
+    display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  fill: currentColor;
+}
+.header__link--text {
+  @media screen and (max-width: 767.99px) {
+    display: none;
+  }
+}
+.header__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $primary-text-color;
+  width: 34px;
+  height: 34px;
+  margin-left: 16px;
+  transition: $transition;
+  @media screen and (min-width: 768px) {
+    margin-left: 32px;
+  }
+}
+.header__btn:hover,
+.header__btn:focus {
+  color: $accent-color;
+}
+
+.header__btn svg {
+  width: 32px;
+  height: 32px;
+  fill: currentColor;
 }
