@@ -1,18 +1,21 @@
-const gulp = require("gulp");
-const sass = require("gulp-sass")(require("sass"));
-const uglify = require("gulp-uglify");
-const concat = require("gulp-concat");
-const rename = require("gulp-rename");
-const cleanCSS = require("gulp-clean-css");
-const sourcemaps = require("gulp-sourcemaps");
-const browserSync = require("browser-sync").create();
-const imagemin = require("gulp-imagemin");
-const webp = require("gulp-webp");
-const ghPages = require("gulp-gh-pages");
-const svgSprite = require("gulp-svg-sprite");
-const postcss = require("gulp-postcss");
-const autoprefixer = require("autoprefixer");
-const cssimport = require("postcss-import");
+import gulp from "gulp";
+import sass from "gulp-sass";
+import nodeSass from "sass"; // Убедитесь, что sass установлен
+import autoprefixer from "autoprefixer";
+import postcss from "gulp-postcss";
+import cleanCSS from "gulp-clean-css";
+import concat from "gulp-concat";
+import rename from "gulp-rename";
+import uglify from "gulp-uglify";
+import sourcemaps from "gulp-sourcemaps";
+import browserSync from "browser-sync";
+import ghPages from "gulp-gh-pages";
+import svgSprite from "gulp-svg-sprite";
+import postcssImport from "postcss-import";
+import imagemin from "gulp-imagemin";
+import webp from "gulp-webp";
+
+const browserSyncInstance = browserSync.create();
 
 // Пути к исходным файлам
 const paths = {
@@ -29,23 +32,21 @@ const paths = {
     dest: "dist/images",
   },
   svg: {
-    src: "src/svg/**/*.svg", // Путь к исходным SVG файлам
-    dest: "dist/svg/", // Путь к конечному SVG спрайту
+    src: "src/svg/**/*.svg",
+    dest: "dist/svg/",
   },
 };
 
+// Настройка gulp-sass с использованием компилятора Sass
+const sassCompiler = sass(nodeSass); // Используем node-sass как компилятор
+
 // Компиляция SCSS в CSS
-function styles() {
+export function styles() {
   return gulp
     .src(paths.styles.src)
     .pipe(sourcemaps.init())
-    .pipe(sass().on("error", sass.logError))
-    .pipe(
-      postcss([
-        cssimport(), // Импорт CSS файлов (включая modern-normalize)
-        autoprefixer(), // Автопрефиксы для поддержки различных браузеров
-      ])
-    )
+    .pipe(sassCompiler().on("error", sassCompiler.logError))
+    .pipe(postcss([postcssImport(), autoprefixer()]))
     .pipe(cleanCSS())
     .pipe(
       rename({
@@ -55,21 +56,21 @@ function styles() {
     )
     .pipe(sourcemaps.write("."))
     .pipe(gulp.dest(paths.styles.dest))
-    .pipe(browserSync.stream());
+    .pipe(browserSyncInstance.stream());
 }
 
 // Минификация и объединение JS файлов
-function scripts() {
+export function scripts() {
   return gulp
     .src(paths.scripts.src, { sourcemaps: true })
     .pipe(concat("main.min.js"))
     .pipe(uglify())
     .pipe(gulp.dest(paths.scripts.dest))
-    .pipe(browserSync.stream());
+    .pipe(browserSyncInstance.stream());
 }
 
-// Оптимизация изображений
-function images() {
+// Оптимизация изображений и конвертация в WebP
+export function images() {
   return gulp
     .src(paths.images.src)
     .pipe(imagemin())
@@ -79,14 +80,14 @@ function images() {
 }
 
 // Создание SVG спрайта
-function sprite() {
+export function sprite() {
   return gulp
     .src(paths.svg.src)
     .pipe(
       svgSprite({
         mode: {
           symbol: {
-            sprite: "sprite.svg", // Имя файла спрайта
+            sprite: "sprite.svg",
           },
         },
       })
@@ -95,8 +96,8 @@ function sprite() {
 }
 
 // Слежение за изменениями в файлах
-function watch() {
-  browserSync.init({
+export function watch() {
+  browserSyncInstance.init({
     server: {
       baseDir: "./",
     },
@@ -105,21 +106,14 @@ function watch() {
   gulp.watch(paths.scripts.src, scripts);
   gulp.watch(paths.images.src, images);
   gulp.watch(paths.svg.src, sprite);
-  gulp.watch("./*.html").on("change", browserSync.reload);
+  gulp.watch("./*.html").on("change", browserSyncInstance.reload);
 }
 
 // Задача для развертывания на GitHub Pages
-function deploy() {
+export function deploy() {
   return gulp.src("./dist/**/*").pipe(ghPages());
 }
 
 const build = gulp.series(gulp.parallel(styles, scripts, images, sprite));
 
-exports.styles = styles;
-exports.scripts = scripts;
-exports.images = images;
-exports.sprite = sprite;
-exports.watch = watch;
-exports.build = build;
-exports.deploy = deploy;
-exports.default = gulp.series(build, watch);
+export default gulp.series(build, watch);

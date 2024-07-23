@@ -7,9 +7,6 @@ npm-debug.log*
 node_modules/
 /node_modules
 
-# Папка для сборки
-dist/
-
 # Конфигурационные файлы операционной системы
 .DS_Store
 Thumbs.db
