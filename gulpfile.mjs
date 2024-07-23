@@ -79,19 +79,35 @@ export function images() {
     .pipe(gulp.dest(paths.images.dest));
 }
 
+const spriteConfig = {
+  mode: {
+    symbol: {
+      sprite: "sprite.svg", // Название итогового файла спрайта
+      example: false, // Не создавать HTML файл с примером
+    },
+  },
+  shape: {
+    dimension: {
+      // Настройки размера
+      maxWidth: 32,
+      maxHeight: 32,
+    },
+    spacing: {
+      // Интервал между иконками
+      padding: 10,
+    },
+  },
+  svg: {
+    xmlDeclaration: false, // Не добавлять декларацию XML
+    doctypeDeclaration: false, // Не добавлять декларацию doctype
+  },
+};
+
 // Создание SVG спрайта
 export function sprite() {
   return gulp
     .src(paths.svg.src)
-    .pipe(
-      svgSprite({
-        mode: {
-          symbol: {
-            sprite: "sprite.svg",
-          },
-        },
-      })
-    )
+    .pipe(svgSprite(spriteConfig))
     .pipe(gulp.dest(paths.svg.dest));
 }
 

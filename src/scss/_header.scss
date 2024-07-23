@@ -1,0 +1,11 @@
+.header__link {
+	color: $accent-color;
+}
+
+.header__link svg {
+	display: block;
+	width: 32px;
+	height: 32px;
+	fill: currentColor;
+	stroke: currentColor;
+}

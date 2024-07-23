@@ -1,29 +1,355 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Project</title>
-    <!-- Подключение минифицированного CSS файла -->
-    <link rel="stylesheet" href="dist/css/main.min.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Страница профиля интернет-магазина" />
+    <meta
+      name="keywords"
+      content="интернет-магазин, товары, косметика, профиль пользователя"
+    />
+    <meta name="author" content="Kristi Krasovska" />
+    <title>Профиль</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
+      integrity="sha512-4xo8blKMVCiXpTaLzQSLSw3KFOVPWhm/TRtuPVc4WG6kUgjH6J03IBuG7JZPkcWMxJ5huwaBpOpnwYElP/m6wg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="dist/css/main.min.css" />
+  </head>
+  <body>
     <header>
-		<div class="container">
-		  <nav><a href="/" class="logo" >cedro</a><div><a href="tel:8 (800) 555-35-35"><span>8 (800) 555-35-35</span></a></div></nav>
-			</div>
+      <div class="container">
+        <nav class="nav">
+          <a href="/" class="logo" aria-label="cedro логотип">
+            <img
+              src="dist/images/logo.svg"
+              alt="cedro logo"
+              width="91"
+              height="32"
+            />
+          </a>
+          <ul class="nav__list">
+            <li>
+              <a class="header__link" href="tel:88005553535"
+                ><svg class="icon">
+                  <use
+                    class="tel"
+                    xlink:href="dist/svg/symbol/sprite.svg#aicon_tel"
+                  ></use></svg
+                ><span>8 (800) 555-35-35</span></a
+              >
+            </li>
+            <li>
+              <a
+                class="header__link"
+                href="./favorites.html"
+                aria-label="избранные товары"
+                ><svg class="icon">
+                  <use
+                    class="heart"
+                    xlink:href="dist/svg/symbol/sprite.svg#aicon_heart"
+                  ></use></svg
+              ></a>
+            </li>
+            <li>
+              <a
+                class="header__link"
+                href="./favorites.html"
+                aria-label="профиль"
+                ><svg class="icon">
+                  <use
+                    class="user"
+                    xlink:href="dist/svg/symbol/sprite.svg#aicon_user"
+                  ></use></svg
+              ></a>
+            </li>
+          </ul>
+        </nav>
+        <button type="button" class="header__btn" aria-label="открыть меню">
+          <svg class="icon">
+            <use
+              class="user"
+              xlink:href="dist/svg/symbol/sprite.svg#aicon_menu"
+            ></use>
+          </svg>
+        </button>
+      </div>
     </header>
-    
+
     <main>
-<section>		<div class="container">
-     
-			</div></section>
+      <div class="wrapper">
+        <aside class="side-menu">
+          <div class="container">
+            <ul class="side-menu__list">
+              <li class="side-menu__item">
+                <a href="./profile.hrml" class="side-menu__link">профиль</a>
+              </li>
+              <li class="side-menu__item">
+                <a href="./orders.hrml" class="side-menu__link">мои заказы</a>
+              </li>
+            </ul>
+            <button type="button" class="side-menu__btn">выход</button>
+          </div>
+        </aside>
+        <section class="hero">
+          <div class="container">
+            <h1 class="hero__title">Профиль</h1>
+            <p class="hero__bottom-text">Данные профиля</p>
+            <form class="form-profile">
+              <div class="form-profile__group">
+                <label class="form-profile__label" for="name">Имя</label>
+                <input
+                  class="form-profile__input"
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Введите ваше имя"
+                  required
+                />
+              </div>
+              <div class="form-profile__group">
+                <label class="form-profile__label" for="email">Почта</label>
+                <input
+                  class="form-profile__input"
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Введите ваш email"
+                  required
+                />
+              </div>
+              <div class="form-profile__group">
+                <label class="form-profile__label" for="phone">Телефон</label>
+                <input
+                  class="form-profile__input"
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="Введите ваш телефон"
+                  required
+                />
+              </div>
+              <button class="form-profile__btn" type="submit">
+                Сохранить изменения
+              </button>
+            </form>
+          </div>
+        </section>
+      </div>
+      <section class="gallery">
+        <div class="container">
+          <h2 class="title">Тренды сезона</h2>
+          <ul class="gallery__list">
+            <li class="gallery__item">
+              <div class="card">
+                <p class="card__label">Sale</p>
+                <button
+                  class="card__btn"
+                  type="button"
+                  aria-label="добавить в избранное"
+                >
+                  <svg class="icon">
+                    <use
+                      class="user"
+                      xlink:href="dist/svg/symbol/sprite.svg#aicon_favorite"
+                    ></use>
+                  </svg>
+                </button>
+                <img
+                  src="dist/images/product.webp"
+                  alt="товар"
+                  width="218"
+                  height="312"
+                />
+                <p class="card__title">Brown to Blonde</p>
+                <p class="card__description">Пигмент для бровей</p>
+                <p class="card__value">12 ml.</p>
+                <p class="card__price">
+                  1 500 ₽<span class="card__price--line-through">3 000 ₽</span>
+                </p>
+              </div>
+            </li>
+            <li class="gallery__item">
+              <div class="card">
+                <p class="card__label">Акция! 1+1=3</p>
+                <button
+                  class="card__btn"
+                  type="button"
+                  aria-label="добавить в избранное"
+                >
+                  <svg class="icon">
+                    <use
+                      class="user"
+                      xlink:href="dist/svg/symbol/sprite.svg#aicon_favorite"
+                    ></use>
+                  </svg>
+                </button>
+                <img
+                  src="dist/images/product.webp"
+                  alt="товар"
+                  width="218"
+                  height="312"
+                />
+                <p class="card__title">Brown to Blonde</p>
+                <p class="card__description">Пигмент для бровей</p>
+                <p class="card__value">12 ml.</p>
+                <p class="card__price">
+                  1 500 ₽<span class="card__price--line-through">3 000 ₽</span>
+                </p>
+              </div>
+            </li>
+            <li class="gallery__item">
+              <div class="card">
+                <p class="card__label">Sale</p>
+                <button
+                  class="card__btn"
+                  type="button"
+                  aria-label="добавить в избранное"
+                >
+                  <svg class="icon">
+                    <use
+                      class="user"
+                      xlink:href="dist/svg/symbol/sprite.svg#aicon_favorite"
+                    ></use>
+                  </svg>
+                </button>
+                <img
+                  src="dist/images/product.webp"
+                  alt="товар"
+                  width="218"
+                  height="312"
+                />
+                <p class="card__title">Brown to Blonde</p>
+                <p class="card__description">Пигмент для бровей</p>
+                <p class="card__value">12 ml.</p>
+                <p class="card__price">
+                  1 500 ₽<span class="card__price--line-through">3 000 ₽</span>
+                </p>
+              </div>
+            </li>
+            <li class="gallery__item">
+              <div class="card">
+                <p class="card__label">Бесплатная доставка</p>
+                <button
+                  class="card__btn"
+                  type="button"
+                  aria-label="добавить в избранное"
+                >
+                  <svg class="icon">
+                    <use
+                      class="user"
+                      xlink:href="dist/svg/symbol/sprite.svg#aicon_favorite"
+                    ></use>
+                  </svg>
+                </button>
+                <img
+                  src="dist/images/product.webp"
+                  alt="товар"
+                  width="218"
+                  height="312"
+                />
+                <p class="card__title">Brown to Blonde</p>
+                <p class="card__description">Пигмент для бровей</p>
+                <p class="card__value">12 ml.</p>
+                <p class="card__price">
+                  1 500 ₽<span class="card__price--line-through">3 000 ₽</span>
+                </p>
+              </div>
+            </li>
+            <li class="gallery__item">
+              <div class="card">
+                <p class="card__label">Бесплатная доставка</p>
+                <button
+                  class="card__btn"
+                  type="button"
+                  aria-label="добавить в избранное"
+                >
+                  <svg class="icon">
+                    <use
+                      class="user"
+                      xlink:href="dist/svg/symbol/sprite.svg#aicon_favorite"
+                    ></use>
+                  </svg>
+                </button>
+                <img
+                  src="dist/images/product.webp"
+                  alt="товар"
+                  width="218"
+                  height="312"
+                />
+                <p class="card__title">Brown to Blonde</p>
+                <p class="card__description">Пигмент для бровей</p>
+                <p class="card__value">12 ml.</p>
+                <p class="card__price">
+                  1 500 ₽<span class="card__price--line-through">3 000 ₽</span>
+                </p>
+              </div>
+            </li>
+          </ul>
+          <a href="./catalog.html" class="gallery__link"
+            >Перейти в каталог<span class="gallery__img"
+              ><svg class="icon">
+                <use
+                  class="arrow"
+                  xlink:href="dist/svg/symbol/sprite.svg#aicon_arrow"
+                ></use></svg></span
+          ></a>
+        </div>
+      </section>
+      <div class="backdrop-menu is-hidden">
+        <button
+          class="backdrop-menu__close-btn"
+          type="button"
+          aria-label="закрыть меню"
+        >
+          <svg class="icon">
+            <use
+              class="user"
+              xlink:href="dist/svg/symbol/sprite.svg#aicon_close"
+            ></use>
+          </svg>
+        </button>
+        <nav class="nav-menu">
+          <div class="nav-menu__col">
+            <p class="nav-menu__title">Продукция</p>
+            <ul class="nav-menu__list">
+              <li class="nav-menu__item">
+                <a class="nav-menu__link" href="#">Пигменты</a>
+                <a class="nav-menu__link" href="#">Пигменты</a>
+                <a class="nav-menu__link" href="#">Аппараты</a>
+                <a class="nav-menu__link" href="#">Иглы</a>
+                <a class="nav-menu__link" href="#">Расходные материалы</a>
+              </li>
+            </ul>
+          </div>
+          <div class="nav-menu__col">
+            <p class="nav-menu__title">Компания</p>
+            <ul class="nav-menu__list">
+              <li class="nav-menu__item">
+                <a class="nav-menu__link" href="#">Блог</a>
+                <a class="nav-menu__link" href="#">Обучение</a>
+                <a class="nav-menu__link" href="#">Стать представителем</a>
+                <a class="nav-menu__link" href="#">Контакты</a>
+                <a class="nav-menu__link" href="#"
+                  >Политика конфиденциальности</a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
     </main>
 
-    <footer>
-    </footer>
-
     <!-- Подключение минифицированного JS файла -->
-    <script src="dist/js/main.min.js"></script>
-</body>
+    <script defer src="dist/js/main.min.js"></script>
+  </body>
 </html>
