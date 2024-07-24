@@ -154,7 +154,7 @@
   }
 }
 .form-profile__input {
-  cursor: url("dist/images/cursor.svg"), auto;
+  cursor: url("../images/cursor.svg"), auto;
   width: 100%;
   max-width: 343px;
   background-color: $input-bg;
@@ -246,7 +246,7 @@
   }
 }
 .gallery__item {
-  cursor: url("dist/images/cursor.svg"), auto;
+  cursor: url("../images/cursor.svg"), auto;
 }
 .gallery__item:not(:last-of-type) {
   margin-right: 8px;
