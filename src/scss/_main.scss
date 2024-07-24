@@ -238,22 +238,33 @@
 .gallery__list {
   display: flex;
   justify-content: flex-start;
-  gap: 8px;
   width: 100vw;
   overflow: hidden;
   margin-bottom: 32px;
   @media screen and (min-width: 1280px) {
     margin-bottom: 0;
-    gap: 32px;
+  }
+}
+.gallery__item {
+  cursor: url("/dist/images/cursor.svg"), auto;
+}
+.gallery__item:not(:last-of-type) {
+  margin-right: 8px;
+  @media screen and (min-width: 1280px) {
+    margin-right: 32px;
   }
 }
 .card {
+  display: block;
   width: 255px;
   height: 403px;
   border-radius: 8px;
   padding: 16px;
   background-color: $input-bg;
+  border: 1px solid transparent;
+  font-family: inherit;
   position: relative;
+  transition: $transition;
   @media screen and (min-width: 1280px) {
     width: 256px;
     height: 418px;
@@ -272,19 +283,19 @@
     top: 257px;
   }
 }
-.gallery__item:nth-of-type(1) .card::before {
+.gallery__item:nth-of-type(5n + 1) .card::before {
   background-color: #c08d74;
 }
-.gallery__item:nth-of-type(2) .card::before {
+.gallery__item:nth-of-type(5n + 2) .card::before {
   background-color: #ea976f;
 }
-.gallery__item:nth-of-type(3) .card::before {
+.gallery__item:nth-of-type(5n + 3) .card::before {
   background-color: #c07474;
 }
-.gallery__item:nth-of-type(4) .card::before {
+.gallery__item:nth-of-type(5n + 4) .card::before {
   background-color: #ea976f;
 }
-.gallery__item:nth-of-type(5) .card::before {
+.gallery__item:nth-of-type(5n + 5) .card::before {
   background-color: #c08d74;
 }
 .card__label {
@@ -320,6 +331,9 @@
     right: 24px;
   }
 }
+.card__btn.active {
+  color: $accent-color;
+}
 .card__btn .icon {
   fill: currentColor;
   stroke: currentColor;
@@ -350,6 +364,16 @@
   font-weight: 700;
   line-height: 1;
   margin-bottom: 8px;
+  transition: $transition;
+  color: $primary-text-color;
+}
+.gallery__item:hover .card__title,
+.gallery__item:focus .card__title {
+  color: $accent-color;
+}
+.gallery__item:hover .card,
+.gallery__item:focus .card {
+  border: 1px solid #21242e66;
 }
 .card__description {
   font-size: 14px;
@@ -374,7 +398,7 @@
   font-style: italic;
   font-weight: 700;
   line-height: 1;
-  text-align: left;
+  color: $primary-text-color;
 }
 .card__price--line-through {
   color: $third-text-color;
@@ -390,11 +414,16 @@
   align-items: center;
   gap: 8px;
   color: $primary-text-color;
+  transition: $transition;
   @media screen and (min-width: 1280px) {
     position: absolute;
     right: 80px;
     top: 132px;
   }
+}
+.gallery__link:hover,
+.gallery__link:focus {
+  color: $accent-color;
 }
 .gallery__img,
 .gallery__img svg {

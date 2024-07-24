@@ -11,23 +11,32 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   menuBtnRef.addEventListener("click", openMenu);
   closeBtnRef.addEventListener("click", closeMenu);
+
+  //   Работа с формой
+  const form = document.querySelector(".form-profile");
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(form);
+    const data = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+    };
+
+    console.log("Form Data:", data);
+
+    // Очистка значений
+    form.reset();
+  });
 });
 
-//   Работа с формой
-const form = document.querySelector(".form-profile");
-
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
-
-  const formData = new FormData(form);
-  const data = {
-    name: formData.get("name"),
-    email: formData.get("email"),
-    phone: formData.get("phone"),
-  };
-
-  console.log("Form Data:", data);
-
-  // Очистка значений
-  form.reset();
-});
+window.onload = function () {
+  $(".slider").slick({
+    autoplay: true,
+    autoplaySpeed: 1500,
+    variableWidth: true,
+    centerMode: true,
+  });
+};
