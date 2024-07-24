@@ -56,25 +56,18 @@ button {
 .container {
   width: 100%;
   min-width: 320px;
+  max-width: 1280px;
   padding-left: 16px;
   padding-right: 16px;
   margin: 0 auto;
 }
 
-@media screen and (min-width: 480px) {
-  .container {
-    width: 480px;
-  }
-}
-
 @media screen and (min-width: 768px) {
   .container {
-    width: 768px;
     padding-left: 32px;
     padding-right: 32px;
   }
 }
-
 @media screen and (min-width: 1280px) {
   .container {
     width: 1280px;
