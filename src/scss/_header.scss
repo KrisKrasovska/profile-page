@@ -1,16 +1,35 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 .header {
   padding: 15px 0;
   border-bottom: 1px solid #e4e4e4;
   width: 100%;
 }
 .header .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 .nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   width: 100%;
 }
@@ -22,6 +41,8 @@
 }
 .logo .icon {
   fill: currentColor;
+  -webkit-transition: $transition;
+  -o-transition: $transition;
   transition: $transition;
 }
 .logo:hover svg,
@@ -29,16 +50,30 @@
   fill: $accent-btn-bg;
 }
 .nav__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   margin-left: auto;
 }
 .header__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   color: $accent-color;
+  -webkit-transition: $transition;
+  -o-transition: $transition;
   transition: $transition;
   letter-spacing: 0.04em;
 }
@@ -96,13 +131,21 @@
   text-align: center;
 }
 .header__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   color: $primary-text-color;
   width: 34px;
   height: 34px;
   margin-left: 16px;
+  -webkit-transition: $transition;
+  -o-transition: $transition;
   transition: $transition;
   @media screen and (min-width: 768px) {
     margin-left: 32px;

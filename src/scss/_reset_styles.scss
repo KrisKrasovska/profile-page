@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 *,
 ::before,
 ::after {
@@ -6,6 +13,7 @@
 }
 
 html {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   width: 100vw;
   overflow-x: hidden;
@@ -87,6 +95,7 @@ a {
   padding: 0;
 
   white-space: nowrap;
+  -webkit-clip-path: inset(100%);
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
