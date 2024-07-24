@@ -74,7 +74,7 @@
             </li>
           </ul>
         </nav>
-        <button type="button" class="header__btn" aria-label="открыть меню">
+        <button type="button" id="open-menu" class="header__btn" aria-label="открыть меню">
           <svg class="icon">
             <use
               class="user"
@@ -85,13 +85,15 @@
       </div>
     </header>
 
-    <main>
+    <main class="main">
       <div class="wrapper">
         <aside class="side-menu">
           <div class="container">
             <ul class="side-menu__list">
               <li class="side-menu__item">
-                <a href="./profile.hrml" class="side-menu__link">профиль</a>
+                <a href="./profile.hrml" class="side-menu__link active"
+                  >профиль</a
+                >
               </li>
               <li class="side-menu__item">
                 <a href="./orders.hrml" class="side-menu__link">мои заказы</a>
@@ -112,7 +114,8 @@
                   type="text"
                   id="name"
                   name="name"
-                  placeholder="Введите ваше имя"
+                  placeholder="Имя"
+                  value="Алексеева Ульяна Евгеньевна"
                   required
                 />
               </div>
@@ -123,7 +126,8 @@
                   type="email"
                   id="email"
                   name="email"
-                  placeholder="Введите ваш email"
+                  placeholder="Email"
+                  value="pochta07@mail.ru"
                   required
                 />
               </div>
@@ -134,7 +138,8 @@
                   type="tel"
                   id="phone"
                   name="phone"
-                  placeholder="Введите ваш телефон"
+                  placeholder="Телефон"
+                  value="+7 (999) 999-99-99"
                   required
                 />
               </div>
@@ -147,7 +152,7 @@
       </div>
       <section class="gallery">
         <div class="container">
-          <h2 class="title">Тренды сезона</h2>
+          <h2 class="title"><span class="accent">Тренды</span> сезона</h2>
           <ul class="gallery__list">
             <li class="gallery__item">
               <div class="card">
@@ -169,6 +174,7 @@
                   alt="товар"
                   width="218"
                   height="312"
+                  class="card__img"
                 />
                 <p class="card__title">Brown to Blonde</p>
                 <p class="card__description">Пигмент для бровей</p>
@@ -198,6 +204,7 @@
                   alt="товар"
                   width="218"
                   height="312"
+                  class="card__img"
                 />
                 <p class="card__title">Brown to Blonde</p>
                 <p class="card__description">Пигмент для бровей</p>
@@ -227,6 +234,7 @@
                   alt="товар"
                   width="218"
                   height="312"
+                  class="card__img"
                 />
                 <p class="card__title">Brown to Blonde</p>
                 <p class="card__description">Пигмент для бровей</p>
@@ -256,6 +264,7 @@
                   alt="товар"
                   width="218"
                   height="312"
+                  class="card__img"
                 />
                 <p class="card__title">Brown to Blonde</p>
                 <p class="card__description">Пигмент для бровей</p>
@@ -285,6 +294,7 @@
                   alt="товар"
                   width="218"
                   height="312"
+                  class="card__img"
                 />
                 <p class="card__title">Brown to Blonde</p>
                 <p class="card__description">Пигмент для бровей</p>
@@ -306,46 +316,76 @@
         </div>
       </section>
       <div class="backdrop-menu is-hidden">
-        <button
-          class="backdrop-menu__close-btn"
-          type="button"
-          aria-label="закрыть меню"
-        >
-          <svg class="icon">
-            <use
-              class="user"
-              xlink:href="dist/svg/symbol/sprite.svg#aicon_close"
-            ></use>
-          </svg>
-        </button>
-        <nav class="nav-menu">
-          <div class="nav-menu__col">
-            <p class="nav-menu__title">Продукция</p>
-            <ul class="nav-menu__list">
-              <li class="nav-menu__item">
-                <a class="nav-menu__link" href="#">Пигменты</a>
-                <a class="nav-menu__link" href="#">Пигменты</a>
-                <a class="nav-menu__link" href="#">Аппараты</a>
-                <a class="nav-menu__link" href="#">Иглы</a>
-                <a class="nav-menu__link" href="#">Расходные материалы</a>
-              </li>
-            </ul>
+        <div class="container">
+          <div class="backdrop-menu__top">
+            <a href="/" class="logo" aria-label="cedro логотип">
+              <img
+                src="dist/images/logo.svg"
+                alt="cedro logo"
+                width="91"
+                height="32"
+              />
+            </a>
+            <button
+              class="backdrop-menu__close-btn"
+              type="button"
+				  id="close-menu"
+              aria-label="закрыть меню"
+            >
+              <svg class="icon">
+                <use
+                  class="close"
+                  xlink:href="dist/svg/symbol/sprite.svg#aicon_close"
+                ></use>
+              </svg>
+            </button>
           </div>
-          <div class="nav-menu__col">
-            <p class="nav-menu__title">Компания</p>
-            <ul class="nav-menu__list">
-              <li class="nav-menu__item">
-                <a class="nav-menu__link" href="#">Блог</a>
-                <a class="nav-menu__link" href="#">Обучение</a>
-                <a class="nav-menu__link" href="#">Стать представителем</a>
-                <a class="nav-menu__link" href="#">Контакты</a>
-                <a class="nav-menu__link" href="#"
-                  >Политика конфиденциальности</a
-                >
-              </li>
-            </ul>
-          </div>
-        </nav>
+
+          <nav class="nav-menu">
+            <div class="nav-menu__col">
+              <p class="nav-menu__title">Продукция</p>
+              <ul class="nav-menu__list">
+                <li class="nav-menu__item">
+                  <a class="nav-menu__link" href="#">Пигменты</a>
+                </li>
+                <li class="nav-menu__item">
+                  <a class="nav-menu__link" href="#">Пигменты</a>
+                </li>
+                <li class="nav-menu__item">
+                  <a class="nav-menu__link" href="#">Аппараты</a>
+                </li>
+                <li class="nav-menu__item">
+                  <a class="nav-menu__link" href="#">Иглы</a>
+                </li>
+                <li class="nav-menu__item">
+                  <a class="nav-menu__link" href="#">Расходные материалы</a>
+                </li>
+              </ul>
+            </div>
+            <div class="nav-menu__col">
+              <p class="nav-menu__title">Компания</p>
+              <ul class="nav-menu__list">
+                <li class="nav-menu__item">
+                  <a class="nav-menu__link" href="#">Блог</a>
+                </li>
+                <li class="nav-menu__item">
+                  <a class="nav-menu__link" href="#">Обучение</a>
+                </li>
+                <li class="nav-menu__item">
+                  <a class="nav-menu__link" href="#">Стать представителем</a>
+                </li>
+                <li class="nav-menu__item">
+                  <a class="nav-menu__link" href="#">Контакты</a>
+                </li>
+                <li class="nav-menu__item">
+                  <a class="nav-menu__link" href="#"
+                    >Политика конфиденциальности</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
       </div>
     </main>
 
