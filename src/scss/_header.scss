@@ -14,9 +14,19 @@
   align-items: center;
   width: 100%;
 }
-.logo {
+.logo,
+.logo .icon {
   width: 91px;
   height: 32px;
+  color: $accent-color;
+}
+.logo .icon {
+  fill: currentColor;
+  transition: $transition;
+}
+.logo:hover svg,
+.logo:focus svg {
+  fill: $accent-btn-bg;
 }
 .nav__list {
   display: flex;

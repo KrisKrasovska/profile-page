@@ -40,16 +40,19 @@
       <div class="container">
         <nav class="nav">
           <a href="/" class="logo" aria-label="cedro логотип">
-            <img
-              src="dist/images/logo.svg"
-              alt="cedro logo"
-              width="91"
-              height="32"
-            />
+            <svg class="icon">
+              <use
+                class="logo-cedro"
+                xlink:href="dist/svg/symbol/sprite.svg#aicon_logo"
+              ></use>
+            </svg>
           </a>
           <ul class="nav__list">
             <li>
-              <a class="header__link" href="tel:88005553535" aria-label="позвонить нам"
+              <a
+                class="header__link"
+                href="tel:88005553535"
+                aria-label="позвонить нам"
                 ><svg class="icon">
                   <use
                     class="tel"
