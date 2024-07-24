@@ -1,5 +1,5 @@
 .wrapper {
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1280px) {
     display: flex;
   }
 }
@@ -7,7 +7,7 @@
   padding: 8px 0;
   border-bottom: 1px solid #ebebeb;
   width: 100%;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1280px) {
     width: 272px;
     border-right: 1px solid #ebebeb;
   }
@@ -16,13 +16,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1280px) {
     flex-direction: column;
     width: 272px;
-    padding: 112px 0 0 80px;
+    padding: 100px 0 0 80px;
     justify-content: flex-start;
     align-items: flex-start;
-    gap: 12px;
+    gap: 6px;
   }
 }
 .side-menu__list {
@@ -30,10 +30,10 @@
   justify-content: flex-start;
   align-items: center;
   gap: 16px;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1280px) {
     flex-direction: column;
     align-items: flex-start;
-    gap: 12px;
+    gap: 6px;
   }
 }
 .side-menu__link.active {
@@ -43,7 +43,6 @@
   font-size: 14px;
   font-weight: 500;
   line-height: 1.71;
-  letter-spacing: 0.04em;
   color: $secondary-text-color;
   text-transform: uppercase;
   transition: $transition;
@@ -68,7 +67,7 @@
   text-transform: uppercase;
   color: $secondary-text-color;
   transition: $transition;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1280px) {
     margin-left: 0;
   }
 }
@@ -78,13 +77,14 @@
 }
 .hero {
   padding: 32px 0 65px;
-  @media screen and (min-width: 768px) {
-    padding: 112px 95px 80px 0;
+  @media screen and (min-width: 1280px) {
+    padding: 103px 95px 80px 0;
     border-bottom: 1px solid #ebebeb;
   }
 }
 .hero .container {
   padding: 0;
+  width: 100%;
 }
 .hero__title {
   font-size: 35px;
@@ -93,11 +93,12 @@
   text-transform: uppercase;
   margin-bottom: 32px;
   margin-left: 16px;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1280px) {
     font-size: 80px;
     padding-left: 96px;
-    padding-bottom: 80px;
+    padding-bottom: 78px;
     margin-left: 0;
+    margin-bottom: 80px;
     border-bottom: 1px solid #ebebeb;
   }
 }
@@ -108,7 +109,7 @@
   text-align: left;
   margin-bottom: 32px;
   margin-left: 16px;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1280px) {
     padding-left: 96px;
     font-size: 24px;
     margin-left: 0;
@@ -120,22 +121,22 @@
   flex-direction: column;
   gap: 16px;
   width: 100vw;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1280px) {
     width: calc(100vw - 272px);
     gap: 24px;
   }
 }
 .form-profile__group {
   padding-left: 16px;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1280px) {
     padding-left: 96px;
   }
 }
 .form-profile__group:last-of-type {
   padding-bottom: 32px;
-  margin-bottom: 32px;
+  margin-bottom: 16px;
   border-bottom: 1px solid #ebebeb;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1280px) {
     padding-bottom: 80px;
     margin-bottom: 56px;
   }
@@ -148,7 +149,7 @@
   color: $third-text-color;
   margin-bottom: 8px;
   display: block;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1280px) {
     margin-bottom: 12px;
   }
 }
@@ -165,7 +166,7 @@
   padding: 16px;
   border: none;
   outline: none;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1280px) {
     width: 544px;
     max-width: 544px;
   }
@@ -199,7 +200,7 @@
   align-items: center;
   margin: 0 auto;
   transition: $transition;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1280px) {
     width: 231px;
     max-width: 231px;
     height: 56px;
@@ -215,8 +216,8 @@
 }
 .gallery {
   padding-bottom: 32px;
-  @media screen and (min-width: 768px) {
-    padding: 112px 0 112px 80px;
+  @media screen and (min-width: 1280px) {
+    padding: 112px 0 112px 49px;
     position: relative;
   }
 }
@@ -226,7 +227,7 @@
   line-height: 1.14;
   text-transform: uppercase;
   margin-bottom: 32px;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1280px) {
     font-size: 48px;
     margin-bottom: 48px;
   }
@@ -241,7 +242,7 @@
   width: 100vw;
   overflow: hidden;
   margin-bottom: 32px;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1280px) {
     margin-bottom: 0;
     gap: 32px;
   }
@@ -253,11 +254,38 @@
   padding: 16px;
   background-color: $input-bg;
   position: relative;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1280px) {
     width: 256px;
     height: 418px;
     padding: 24px;
   }
+}
+.card::before {
+  content: "";
+  position: absolute;
+  top: 255px;
+  left: 0;
+  width: 100%;
+  height: 12px;
+  display: block;
+  @media screen and (min-width: 1280px) {
+    top: 257px;
+  }
+}
+.gallery__item:nth-of-type(1) .card::before {
+  background-color: #c08d74;
+}
+.gallery__item:nth-of-type(2) .card::before {
+  background-color: #ea976f;
+}
+.gallery__item:nth-of-type(3) .card::before {
+  background-color: #c07474;
+}
+.gallery__item:nth-of-type(4) .card::before {
+  background-color: #ea976f;
+}
+.gallery__item:nth-of-type(5) .card::before {
+  background-color: #c08d74;
 }
 .card__label {
   position: absolute;
@@ -270,14 +298,16 @@
   font-weight: 400;
   line-height: 1.29;
   color: $bg-color;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1280px) {
     top: 24px;
     left: 24px;
   }
 }
 .card__btn {
   position: absolute;
-  width: 32px;
+  padding: 0;
+  width: 24px;
+  height: 24x;
   top: 16px;
   right: 16px;
   display: flex;
@@ -285,7 +315,7 @@
   justify-content: center;
   color: $icon-color;
   transition: $transition;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1280px) {
     top: 24px;
     right: 24px;
   }
@@ -304,11 +334,13 @@
   color: $accent-color;
 }
 .card__img {
-  margin-bottom: 13px;
+  margin-top: -15px;
+  margin-bottom: 27px;
   width: 255px;
   height: 255px;
-  @media screen and (min-width: 768px) {
-    margin-bottom: 32px;
+  @media screen and (min-width: 1280px) {
+    margin-bottom: 37px;
+    margin-top: -22px;
   }
 }
 .card__title {
@@ -332,6 +364,9 @@
   line-height: 1.29;
   margin-bottom: 16px;
   color: $secondary-text-color;
+  @media screen and (min-width: 1280px) {
+    margin-bottom: 14px;
+  }
 }
 .card__price {
   font-family: Times New Roman;
@@ -355,10 +390,10 @@
   align-items: center;
   gap: 8px;
   color: $primary-text-color;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1280px) {
     position: absolute;
     right: 80px;
-    top: 112px;
+    top: 132px;
   }
 }
 .gallery__img,
@@ -387,7 +422,7 @@
   width: 100vw;
   height: 772px;
   @media screen and (min-width: 1280px) {
-    height: 768px;
+    height: 1280px;
   }
 }
 .backdrop-menu__top {

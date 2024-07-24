@@ -28,7 +28,7 @@ const paths = {
     dest: "dist/js",
   },
   images: {
-    src: "src/images/**/*.{jpg,jpeg,png,svg,gif}",
+    src: "src/images/**/*.{jpg,jpeg,png,svg,gif,webp}",
     dest: "dist/images",
   },
   svg: {
@@ -72,7 +72,7 @@ export function scripts() {
 // Оптимизация изображений и конвертация в WebP
 export function images() {
   return gulp
-    .src(paths.images.src)
+    .src(paths.images.src, { encoding: false })
     .pipe(imagemin())
     .pipe(gulp.dest(paths.images.dest))
     .pipe(

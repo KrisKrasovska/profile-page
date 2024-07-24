@@ -1,5 +1,5 @@
 .header {
-  padding: 16px 0;
+  padding: 15px 0;
   border-bottom: 1px solid #e4e4e4;
   width: 100%;
 }
@@ -30,6 +30,7 @@
   align-items: center;
   color: $accent-color;
   transition: $transition;
+  letter-spacing: 0.04em;
 }
 .header__link:hover,
 .header__link:focus {
@@ -37,7 +38,7 @@
 }
 .header__link--text {
   @media screen and (min-width: 768px) {
-    margin-right: 32px;
+    margin-right: 30px;
   }
 }
 
