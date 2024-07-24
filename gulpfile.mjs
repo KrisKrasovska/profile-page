@@ -75,7 +75,11 @@ export function images() {
     .src(paths.images.src)
     .pipe(imagemin())
     .pipe(gulp.dest(paths.images.dest))
-    .pipe(webp())
+    .pipe(
+      webp({
+        quality: 100,
+      })
+    )
     .pipe(gulp.dest(paths.images.dest));
 }
 

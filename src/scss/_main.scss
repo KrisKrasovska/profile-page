@@ -7,17 +7,34 @@
   padding: 8px 0;
   border-bottom: 1px solid #ebebeb;
   width: 100%;
+  @media screen and (min-width: 768px) {
+    width: 272px;
+    border-right: 1px solid #ebebeb;
+  }
 }
 .side-menu .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media screen and (min-width: 768px) {
+    flex-direction: column;
+    width: 272px;
+    padding: 112px 0 0 80px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 12px;
+  }
 }
 .side-menu__list {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   gap: 16px;
+  @media screen and (min-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
 }
 .side-menu__link.active {
   color: $accent-color;
@@ -43,6 +60,7 @@
   justify-content: center;
   align-items: center;
   font-family: inherit;
+  padding: 0;
   font-size: 14px;
   font-weight: 500;
   line-height: 1.71;
@@ -50,6 +68,9 @@
   text-transform: uppercase;
   color: $secondary-text-color;
   transition: $transition;
+  @media screen and (min-width: 768px) {
+    margin-left: 0;
+  }
 }
 .side-menu__btn:hover,
 .side-menu__btn:focus {
@@ -57,6 +78,10 @@
 }
 .hero {
   padding: 32px 0 65px;
+  @media screen and (min-width: 768px) {
+    padding: 112px 95px 80px 0;
+    border-bottom: 1px solid #ebebeb;
+  }
 }
 .hero .container {
   padding: 0;
@@ -68,6 +93,13 @@
   text-transform: uppercase;
   margin-bottom: 32px;
   margin-left: 16px;
+  @media screen and (min-width: 768px) {
+    font-size: 80px;
+    padding-left: 96px;
+    padding-bottom: 80px;
+    margin-left: 0;
+    border-bottom: 1px solid #ebebeb;
+  }
 }
 .hero__bottom-text {
   font-size: 20px;
@@ -76,20 +108,37 @@
   text-align: left;
   margin-bottom: 32px;
   margin-left: 16px;
+  @media screen and (min-width: 768px) {
+    padding-left: 96px;
+    font-size: 24px;
+    margin-left: 0;
+    margin-bottom: 48px;
+  }
 }
 .form-profile {
   display: flex;
   flex-direction: column;
   gap: 16px;
   width: 100vw;
+  @media screen and (min-width: 768px) {
+    width: calc(100vw - 272px);
+    gap: 24px;
+  }
 }
 .form-profile__group {
   padding-left: 16px;
+  @media screen and (min-width: 768px) {
+    padding-left: 96px;
+  }
 }
 .form-profile__group:last-of-type {
   padding-bottom: 32px;
   margin-bottom: 32px;
   border-bottom: 1px solid #ebebeb;
+  @media screen and (min-width: 768px) {
+    padding-bottom: 80px;
+    margin-bottom: 56px;
+  }
 }
 .form-profile__label {
   font-size: 16px;
@@ -99,6 +148,9 @@
   color: $third-text-color;
   margin-bottom: 8px;
   display: block;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 12px;
+  }
 }
 .form-profile__input {
   cursor: url("/dist/images/cursor.svg"), auto;
@@ -113,6 +165,10 @@
   padding: 16px;
   border: none;
   outline: none;
+  @media screen and (min-width: 768px) {
+    width: 544px;
+    max-width: 544px;
+  }
 }
 .form-profile__input:focus-within {
   outline: 1px solid #000000;
@@ -143,6 +199,12 @@
   align-items: center;
   margin: 0 auto;
   transition: $transition;
+  @media screen and (min-width: 768px) {
+    width: 231px;
+    max-width: 231px;
+    height: 56px;
+    margin-left: 96px;
+  }
 }
 .form-profile__btn:hover,
 .form-profile__btn:focus {
@@ -153,6 +215,10 @@
 }
 .gallery {
   padding-bottom: 32px;
+  @media screen and (min-width: 768px) {
+    padding: 112px 0 112px 80px;
+    position: relative;
+  }
 }
 .title {
   font-size: 28px;
@@ -160,6 +226,10 @@
   line-height: 1.14;
   text-transform: uppercase;
   margin-bottom: 32px;
+  @media screen and (min-width: 768px) {
+    font-size: 48px;
+    margin-bottom: 48px;
+  }
 }
 .accent {
   color: $accent-color;
@@ -171,6 +241,10 @@
   width: 100vw;
   overflow: hidden;
   margin-bottom: 32px;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 0;
+    gap: 32px;
+  }
 }
 .card {
   width: 255px;
@@ -179,6 +253,11 @@
   padding: 16px;
   background-color: $input-bg;
   position: relative;
+  @media screen and (min-width: 768px) {
+    width: 256px;
+    height: 418px;
+    padding: 24px;
+  }
 }
 .card__label {
   position: absolute;
@@ -191,6 +270,10 @@
   font-weight: 400;
   line-height: 1.29;
   color: $bg-color;
+  @media screen and (min-width: 768px) {
+    top: 24px;
+    left: 24px;
+  }
 }
 .card__btn {
   position: absolute;
@@ -202,6 +285,10 @@
   justify-content: center;
   color: $icon-color;
   transition: $transition;
+  @media screen and (min-width: 768px) {
+    top: 24px;
+    right: 24px;
+  }
 }
 .card__btn .icon {
   fill: currentColor;
@@ -220,6 +307,9 @@
   margin-bottom: 13px;
   width: 255px;
   height: 255px;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 32px;
+  }
 }
 .card__title {
   font-family: "Times New Roman";
@@ -227,6 +317,7 @@
   font-style: italic;
   font-weight: 700;
   line-height: 1;
+  margin-bottom: 8px;
 }
 .card__description {
   font-size: 14px;
@@ -256,7 +347,6 @@
   margin-left: 8px;
 }
 .gallery__link {
-  font-family: Roboto;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
@@ -265,6 +355,11 @@
   align-items: center;
   gap: 8px;
   color: $primary-text-color;
+  @media screen and (min-width: 768px) {
+    position: absolute;
+    right: 80px;
+    top: 112px;
+  }
 }
 .gallery__img,
 .gallery__img svg {
